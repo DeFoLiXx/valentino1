@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Valentino Beauty Style — Салон краси Ужгород</title>
+<meta name="description" content="Valentino Beauty Style — салон краси в Ужгороді. Манікюр, педикюр, брови, макіяж, перукар. Комплексний догляд і краса в одному місці. Запис: instagram @valentino_beauty_style">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+:root{
+  --o:#8B2252;--o2:color-mix(in oklab,#8B2252 78%,#ffd9e8);--o3:rgba(139,34,82,.1);
+  --bg:#FAF1F5;--text:#1a0610;--sub:#7A4060;
+  --card:#fff;--alt:#FFF0F6;--line:rgba(139,34,82,.13);
+}
+.night{--bg:#0d0608;--text:#f0e0e8;--sub:#9a6070;--card:#1a080d;--alt:#15060a;--line:rgba(200,80,130,.16)}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;transition:background .3s,color .3s}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--o);border-radius:2px}
+
+.serif{font-family:'Playfair Display',serif}
+.grad{background:linear-gradient(120deg,var(--o),var(--o2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--o)}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:0 5vw;transition:all .3s}
+#nav.stuck{background:rgba(250,241,245,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.night #nav.stuck{background:rgba(13,6,8,.97)}
+.nr{max-width:1200px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0}
+.logo-m{width:38px;height:38px;border-radius:50%;overflow:hidden;display:grid;place-items:center;flex-shrink:0;box-shadow:0 4px 14px rgba(139,34,82,.3)}
+.logo-m img{width:100%;height:100%;object-fit:cover}
+.logo-n{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--o);line-height:1}
+.logo-s{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--sub);margin-top:1px}
+.nav-links{display:flex;gap:24px}
+.na{background:none;border:none;font-size:12.5px;font-weight:500;color:var(--text);padding:0;position:relative;transition:color .25s;white-space:nowrap;cursor:pointer}
+.na::after{content:'';position:absolute;bottom:-2px;left:0;right:100%;height:1.5px;background:var(--o);transition:right .25s}
+.na:hover{color:var(--o)}.na:hover::after{right:0}
+.nav-r{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.ibtn{width:36px;height:36px;border-radius:9px;border:1px solid var(--line);background:none;font-size:15px;color:var(--text);display:grid;place-items:center;transition:all .25s;flex-shrink:0}
+.ibtn:hover{border-color:var(--o);color:var(--o)}
+.nav-cta{background:var(--o);color:#fff;border:none;padding:9px 20px;border-radius:100px;font-size:12px;font-weight:600;transition:all .25s;white-space:nowrap;box-shadow:0 4px 14px rgba(139,34,82,.25);cursor:pointer}
+.nav-cta:hover{background:var(--o2);transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;border:none;background:none;padding:6px;flex-shrink:0;cursor:pointer}
+.burger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:all .3s}
+
+/* MOBILE MENU */
+#mob{display:none;position:fixed;inset:0;z-index:850;background:var(--bg);flex-direction:column;overflow-y:auto}
+#mob.open{display:flex}
+.mob-body{padding:72px 5vw 40px;display:flex;flex-direction:column;flex:1}
+.mob-a{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;padding:13px 0;border-bottom:1px solid var(--line);color:var(--text);cursor:pointer;transition:color .25s;display:block}
+.mob-a:hover{color:var(--o)}
+.mob-foot{margin-top:auto;padding-top:24px;display:flex;flex-direction:column;gap:10px}
+.mob-close{position:absolute;top:18px;right:5vw;width:40px;height:40px;border-radius:50%;background:var(--o3);border:none;font-size:20px;color:var(--o);display:grid;place-items:center;cursor:pointer}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:13px 26px;border-radius:100px;font-size:13px;font-weight:600;border:none;transition:all .25s;font-family:'Inter',sans-serif;cursor:pointer}
+.bf{background:var(--o);color:#fff;box-shadow:0 5px 18px rgba(139,34,82,.28)}
+.bf:hover{background:var(--o2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(139,34,82,.4)}
+.bo{background:transparent;color:var(--text);border:1.5px solid rgba(139,34,82,.35)}
+.bo:hover{border-color:var(--o);color:var(--o);background:rgba(139,34,82,.04)}
+.bsm{padding:7px 16px;font-size:11.5px}
+.bw{width:100%;padding:14px}
+
+/* HERO */
+#hero{min-height:100dvh;display:flex;align-items:center;position:relative;overflow:hidden;padding:0 5vw}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#FFF0F6 0%,#FFD9EC 60%,#FFF5F8 100%);z-index:0}
+.night .hero-bg{background:linear-gradient(135deg,#0d0608 0%,#1a0210 60%,#0d0608 100%)}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:100px 0 60px;z-index:1;position:relative}
+.hero-eyebrow{margin-bottom:14px;animation:up .7s .1s both}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,6rem);font-weight:900;line-height:.9;letter-spacing:-.03em;margin-bottom:22px;animation:up .7s .25s both}
+.hero-h1 .it{font-style:italic;font-weight:400;font-size:.6em;color:var(--sub);-webkit-text-fill-color:var(--sub)}
+.hero-desc{font-size:15px;color:var(--sub);line-height:1.8;max-width:420px;margin-bottom:32px;animation:up .7s .4s both}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;animation:up .7s .55s both}
+.hero-stats{display:flex;gap:36px;animation:up .7s .7s both}
+.stat-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--o)}
+.stat-l{font-size:10px;color:var(--sub);margin-top:2px;line-height:1.4}
+
+/* HERO RIGHT */
+.hero-right{position:relative;height:520px}
+.hero-img-main{position:absolute;right:0;top:0;width:72%;height:88%;border-radius:28px;overflow:hidden;box-shadow:0 36px 80px rgba(139,34,82,.22);border:2px solid rgba(139,34,82,.15)}
+.hero-img-main img{width:100%;height:100%;object-fit:cover}
+.hero-img-sm{position:absolute;left:0;bottom:10%;width:42%;height:52%;border-radius:20px;overflow:hidden;border:4px solid var(--bg);box-shadow:0 20px 50px rgba(0,0,0,.13)}
+.night .hero-img-sm{border-color:#0d0608}
+.hero-img-sm img{width:100%;height:100%;object-fit:cover}
+.hero-float{position:absolute;right:-8px;top:36%;background:var(--card);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:16px;padding:14px 18px;box-shadow:0 14px 36px rgba(139,34,82,.15);min-width:140px;animation:up .7s .9s both}
+.night .hero-float{background:#1a080d}
+.hero-float-l{font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--o);margin-bottom:3px}
+.hero-float-v{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem}
+.hero-scroll{position:absolute;bottom:28px;left:0;display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--sub);animation:up .7s .85s both}
+.scroll-bar{width:36px;height:1px;background:var(--o);overflow:hidden;position:relative}
+.scroll-bar::after{content:'';position:absolute;left:-100%;top:0;width:100%;height:100%;background:rgba(255,255,255,.6);animation:scan 2s linear infinite}
+
+/* MARQUEE */
+.mq-wrap{background:var(--o);padding:11px 0;overflow:hidden}
+.mq-track{display:flex;white-space:nowrap;animation:mq 20s linear infinite}
+.mqi{color:#fff;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:0 24px;flex-shrink:0}
+
+/* SECTIONS */
+section{padding:84px 5vw}
+.si{max-width:1200px;margin:0 auto}
+.sh{margin-bottom:52px}
+.sh.c{text-align:center}
+.sh.c .ss{margin:12px auto 0}
+.hd{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.1;margin-top:10px}
+.ss{font-size:14px;color:var(--sub);line-height:1.85;max-width:500px;margin-top:12px}
+.alt{background:var(--alt)}
+
+/* ABOUT */
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-imgs{position:relative;height:480px}
+.ab-main{position:absolute;right:0;top:0;width:76%;height:90%;border-radius:24px;overflow:hidden;box-shadow:0 32px 70px rgba(139,34,82,.18)}
+.ab-main img{width:100%;height:100%;object-fit:cover}
+.ab-sm{position:absolute;left:0;bottom:0;width:46%;height:48%;border-radius:18px;overflow:hidden;border:4px solid var(--bg);box-shadow:0 16px 40px rgba(0,0,0,.12)}
+.night .ab-sm{border-color:#0d0608}
+.ab-sm img{width:100%;height:100%;object-fit:cover}
+.ab-badge{position:absolute;right:-10px;top:42%;background:linear-gradient(135deg,var(--o),var(--o2));color:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 14px 34px rgba(139,34,82,.35);z-index:2}
+.ab-badge b{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;display:block;line-height:1}
+.ab-badge span{font-size:10px;letter-spacing:1px;opacity:.9}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:26px}
+.feat{display:flex;gap:11px;align-items:flex-start;padding:13px;border-radius:13px;background:var(--o3);border:1px solid var(--line);transition:all .25s}
+.feat:hover{background:rgba(139,34,82,.08);border-color:rgba(139,34,82,.3);transform:translateY(-2px)}
+.feat-ic{width:34px;height:34px;min-width:34px;border-radius:9px;background:linear-gradient(135deg,var(--o),var(--o2));display:grid;place-items:center;font-size:14px}
+.feat-t{font-weight:600;font-size:13px;margin-bottom:1px}
+.feat-d{font-size:11px;color:var(--sub);line-height:1.5}
+
+/* SERVICES BENTO */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.bc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 18px;transition:all .3s;position:relative;overflow:hidden}
+.night .bc{background:#1a080d}
+.bc::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--o),var(--o2));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.bc:hover{transform:translateY(-5px);box-shadow:0 18px 50px rgba(139,34,82,.14);border-color:rgba(139,34,82,.28)}
+.bc:hover::after{transform:scaleX(1)}
+.bc:nth-child(1),.bc:nth-child(4){grid-column:span 2}
+.bc-n{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;color:rgba(139,34,82,.07);line-height:1;margin-bottom:2px}
+.bc-i{font-size:1.8rem;margin-bottom:10px}
+.bc-t{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.bc-d{font-size:12px;color:var(--sub);line-height:1.65;margin-bottom:14px}
+.bc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.bc-tag{font-size:10px;padding:3px 8px;border-radius:100px;background:var(--o3);color:var(--o);font-weight:600;letter-spacing:.5px}
+
+/* PRICE */
+.price-l{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start}
+.p-nav{display:flex;flex-direction:column;gap:4px;position:sticky;top:80px}
+.ptab{padding:11px 15px;border-radius:11px;font-size:13px;font-weight:500;border:1px solid transparent;background:transparent;color:var(--sub);text-align:left;transition:all .25s;display:flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;cursor:pointer}
+.ptab.on{background:linear-gradient(135deg,var(--o),var(--o2));color:#fff;box-shadow:0 6px 20px rgba(139,34,82,.28)}
+.ptab:not(.on):hover{background:var(--o3);color:var(--o);border-color:rgba(139,34,82,.2)}
+.p-panel{background:var(--card);border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.night .p-panel{background:#1a080d}
+.p-head{padding:17px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.p-head-t{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700}
+.p-pane{display:none}
+.p-pane.on{display:block}
+.p-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px 22px;border-bottom:1px solid var(--line);transition:background .2s}
+.p-row:last-child{border:none}
+.p-row:hover{background:rgba(139,34,82,.04)}
+.p-name{font-size:13.5px}
+.p-price{font-family:'Playfair Display',serif;font-weight:700;color:var(--o);font-size:1rem;white-space:nowrap}
+
+/* MASTERS */
+.masters-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.mc{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:all .35s}
+.night .mc{background:#1a080d}
+.mc:hover{transform:translateY(-7px);box-shadow:0 26px 60px rgba(139,34,82,.16);border-color:rgba(139,34,82,.32)}
+.mc-top{padding:28px 26px 20px;position:relative}
+.mc-num{font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;color:rgba(139,34,82,.07);line-height:1;position:absolute;top:16px;right:20px}
+.mc-photo{width:72px;height:72px;border-radius:50%;overflow:hidden;margin-bottom:14px;box-shadow:0 8px 24px rgba(139,34,82,.28);border:2px solid rgba(139,34,82,.2)}
+.mc-photo img{width:100%;height:100%;object-fit:cover}
+.mc-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:2px}
+.mc-role{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--o)}
+.mc-div{height:1px;background:var(--line);margin:18px 0}
+.mc-body{padding:0 26px 24px}
+.mc-stars{color:var(--o);font-size:13px;letter-spacing:1px;margin-bottom:8px}
+.mc-spec{font-size:13px;color:var(--sub);line-height:1.65;margin-bottom:16px}
+
+/* GALLERY */
+.gal-g{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:240px 240px;gap:10px}
+.gi{border-radius:16px;overflow:hidden;cursor:pointer;position:relative;background:#f0d8e8}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.gi:hover img{transform:scale(1.06)}
+.gi-lbl{position:absolute;inset:0;background:linear-gradient(to top,rgba(139,34,82,.65),transparent);display:flex;align-items:flex-end;padding:16px;color:#fff;font-size:12.5px;font-weight:500;opacity:0;transition:opacity .3s}
+.gi:hover .gi-lbl{opacity:1}
+.gi:nth-child(1){grid-column:1/5}.gi:nth-child(2){grid-column:5/9}.gi:nth-child(3){grid-column:9/13}
+.gi:nth-child(4){grid-column:1/7}.gi:nth-child(5){grid-column:7/13}
+
+/* LIGHTBOX */
+#lb{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.95);align-items:center;justify-content:center;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:90vw;max-height:88vh;border-radius:14px;object-fit:contain}
+#lb-x{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;background:var(--o);border:none;color:#fff;font-size:18px;cursor:pointer}
+
+/* REVIEWS */
+.rev-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rc{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:24px;transition:all .25s}
+.night .rc{background:#1a080d}
+.rc:hover{border-color:rgba(139,34,82,.3);transform:translateY(-3px);box-shadow:0 14px 40px rgba(139,34,82,.1)}
+.rc-q{font-family:'Playfair Display',serif;font-size:3rem;color:var(--o);line-height:.6;margin-bottom:10px;opacity:.35}
+.rc-stars{color:var(--o);font-size:12.5px;letter-spacing:1.5px;margin-bottom:8px}
+.rc-text{font-size:13px;color:var(--sub);line-height:1.85;font-style:italic;margin-bottom:16px}
+.rc-au{display:flex;align-items:center;gap:10px}
+.rc-av{width:38px;height:38px;min-width:38px;border-radius:50%;background:linear-gradient(135deg,var(--o),var(--o2));color:#fff;display:grid;place-items:center;font-family:'Playfair Display',serif;font-weight:700;font-size:15px}
+.rc-name{font-weight:600;font-size:13px}
+.rc-date{font-size:10px;color:var(--sub);margin-top:1px}
+
+/* CTA BAND */
+.cta-band-inner{background:linear-gradient(135deg,var(--o),var(--o2));border-radius:28px;padding:56px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.cta-band-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#fff;max-width:500px}
+.cta-band-inner p{font-size:14px;color:rgba(255,255,255,.8);margin-top:8px;max-width:400px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--o);border:none;padding:13px 26px;border-radius:100px;font-size:13px;font-weight:700;transition:all .25s;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.2)}
+.btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);padding:13px 26px;border-radius:100px;font-size:13px;font-weight:600;transition:all .25s;cursor:pointer}
+.btn-outline-white:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+
+/* CONTACTS */
+.ct-g{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:22px}
+.cbox{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+.night .cbox{background:#1a080d}
+.cbox h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:4px}
+.cb-sub{font-size:13px;color:var(--sub);margin-bottom:22px;line-height:1.6}
+.ci{display:flex;gap:13px;align-items:flex-start;margin-bottom:15px}
+.ci-ic{width:42px;height:42px;min-width:42px;border-radius:11px;background:var(--o3);display:grid;place-items:center;font-size:18px;border:1px solid rgba(139,34,82,.14)}
+.ci-lb{font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--o);margin-bottom:2px}
+.ci-val{font-size:13.5px;font-weight:500}
+.socs{display:flex;gap:7px;margin-top:18px;flex-wrap:wrap}
+.soc{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:100px;border:1px solid rgba(139,34,82,.2);background:var(--o3);font-size:12px;font-weight:500;text-decoration:none;color:var(--text);transition:all .25s}
+.soc:hover{background:var(--o);color:#fff;transform:translateY(-2px)}
+.map-box{border-radius:18px;overflow:hidden;height:280px;border:1px solid var(--line);background:var(--o3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.map-box svg{opacity:.5}
+.map-box p{color:var(--o);font-weight:600}
+.map-link{background:var(--o);color:#fff;padding:10px 22px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;transition:all .25s}
+.map-link:hover{background:var(--o2);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:#0b0408;color:#fff;padding:48px 5vw 24px}
+.ft-i{max-width:1200px;margin:0 auto}
+.ft-g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.06)}
+.ft-logo-n{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--o);margin-bottom:4px}
+.ft-logo-s{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.ft-about p{font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.8;margin-top:11px;max-width:220px}
+.ft-socs{display:flex;gap:8px;margin-top:16px}
+.ft-soc{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;color:rgba(255,255,255,.4);transition:all .25s;text-decoration:none}
+.ft-soc:hover{border-color:var(--o);color:var(--o)}
+.ft-h{font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--o);margin-bottom:14px}
+.ft-a{display:block;font-size:12.5px;color:rgba(255,255,255,.35);margin-bottom:8px;cursor:pointer;transition:color .25s;text-decoration:none}
+.ft-a:hover{color:var(--o)}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;padding-top:18px;flex-wrap:wrap;gap:8px}
+.ft-copy{font-size:11px;color:rgba(255,255,255,.22)}
+
+/* STICKY MOBILE CTA */
+.mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;background:var(--card);border-top:1px solid var(--line);padding:12px 5vw;gap:10px}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(30px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+.r.v{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* KEYFRAMES */
+@keyframes up{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes scan{to{left:200%}}
+
+/* ═══════════ MOBILE ≤768px ═══════════ */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .hero-inner{grid-template-columns:1fr;padding:100px 0 40px;gap:40px}
+  .hero-right{height:320px}
+  .hero-img-main{width:80%;height:85%}
+  .hero-img-sm{width:44%;height:48%}
+  .hero-float{right:0}
+  .about-g{grid-template-columns:1fr;gap:40px}
+  .about-imgs{height:300px}
+  .bento{grid-template-columns:1fr}
+  .bc:nth-child(1),.bc:nth-child(4){grid-column:span 1}
+  .price-l{grid-template-columns:1fr}
+  .p-nav{flex-direction:row;flex-wrap:wrap;position:relative;top:0}
+  .masters-g{grid-template-columns:1fr}
+  .gal-g{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
+  .gi:nth-child(n){grid-column:span 1}
+  .rev-g{grid-template-columns:1fr}
+  .ct-g{grid-template-columns:1fr}
+  .ft-g{grid-template-columns:1fr}
+  .cta-band-inner{flex-direction:column;text-align:center;padding:36px 24px}
+  .mobile-cta{display:flex}
+  footer{padding-bottom:80px}
+  .nav-cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nr">
+    <div class="logo" onclick="g('top')">
+      <div class="logo-m">
+        <img src="https://i.pravatar.cc/80?img=47" alt="Valentino Beauty Style">
+      </div>
+      <div>
+        <div class="logo-n">Valentino</div>
+        <div class="logo-s">Beauty Style · Ужгород</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <button class="na" onclick="g('services')">Послуги</button>
+      <button class="na" onclick="g('price')">Прайс</button>
+      <button class="na" onclick="g('masters')">Майстри</button>
+      <button class="na" onclick="g('gallery')">Галерея</button>
+      <button class="na" onclick="g('reviews')">Відгуки</button>
+      <button class="na" onclick="g('contacts')">Контакти</button>
+    </div>
+    <div class="nav-r">
+      <button class="ibtn" id="themeBtn" title="Змінити тему">🌙</button>
+      <button class="nav-cta" onclick="g('contacts')">Записатись →</button>
+      <button class="burger" id="burgerBtn" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mob">
+  <button class="mob-close" id="mobClose">×</button>
+  <div class="mob-body">
+    <button class="mob-a" onclick="g('services')">Послуги</button>
+    <button class="mob-a" onclick="g('price')">Прайс</button>
+    <button class="mob-a" onclick="g('masters')">Майстри</button>
+    <button class="mob-a" onclick="g('gallery')">Галерея</button>
+    <button class="mob-a" onclick="g('reviews')">Відгуки</button>
+    <button class="mob-a" onclick="g('contacts')">Контакти</button>
+    <div class="mob-foot">
+      <a class="btn bf bw" href="https://instagram.com/valentino_beauty_style" target="_blank" rel="noopener">
+        Записатись в Instagram
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orb" style="width:500px;height:500px;background:rgba(139,34,82,.12);top:-100px;right:-100px"></div>
+  <div class="hero-orb" style="width:300px;height:300px;background:rgba(255,180,210,.2);bottom:0;left:10%"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="eyebrow">Салон краси · Ужгород · Пн–Нд 10:00–20:00</span>
+      </div>
+      <h1 class="hero-h1">
+        Комплексний<br>
+        догляд —<br>
+        <span class="it">у кожній деталі</span>
+      </h1>
+      <p class="hero-desc">Valentino Beauty Style — салон в Ужгороді, де турбота про вас понад усе. Манікюр, педикюр, брови, макіяж та перукарські послуги в атмосфері комфорту.</p>
+      <div class="hero-btns">
+        <button class="btn bf" onclick="g('contacts')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Записатись на візит
+        </button>
+        <button class="btn bo" onclick="g('price')">Дивитись прайс</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-n">5,0</div>
+          <div class="stat-l">Рейтинг<br>в Instagram</div>
+        </div>
+        <div>
+          <div class="stat-n">2830</div>
+          <div class="stat-l">Підписників<br>в Instagram</div>
+        </div>
+        <div>
+          <div class="stat-n">7</div>
+          <div class="stat-l">Днів<br>на тиждень</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-main">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" alt="Манікюр Valentino Beauty Style">
+      </div>
+      <div class="hero-img-sm">
+        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=400&q=80" alt="Педикюр Valentino Beauty Style">
+      </div>
+      <div class="hero-float">
+        <div class="hero-float-l">Графік роботи</div>
+        <div class="hero-float-v">Пн–Нд · 10–20</div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-bar"></div>
+        Гортати вниз
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq-wrap">
+  <div class="mq-track">
+    <span class="mqi">💅 Манікюр</span><span class="mqi">•</span>
+    <span class="mqi">🦶 Педикюр</span><span class="mqi">•</span>
+    <span class="mqi">✨ Нарощування</span><span class="mqi">•</span>
+    <span class="mqi">💄 Макіяж</span><span class="mqi">•</span>
+    <span class="mqi">🌿 Брови</span><span class="mqi">•</span>
+    <span class="mqi">💇‍♀️ Стрижки</span><span class="mqi">•</span>
+    <span class="mqi">Ужгород</span><span class="mqi">•</span>
+    <span class="mqi">💅 Манікюр</span><span class="mqi">•</span>
+    <span class="mqi">🦶 Педикюр</span><span class="mqi">•</span>
+    <span class="mqi">✨ Нарощування</span><span class="mqi">•</span>
+    <span class="mqi">💄 Макіяж</span><span class="mqi">•</span>
+    <span class="mqi">🌿 Брови</span><span class="mqi">•</span>
+    <span class="mqi">💇‍♀️ Стрижки</span><span class="mqi">•</span>
+    <span class="mqi">Ужгород</span><span class="mqi">•</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="si">
+    <div class="about-g">
+      <div class="about-imgs r">
+        <div class="ab-main">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&q=80" alt="Салон Valentino Beauty Style">
+        </div>
+        <div class="ab-sm">
+          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80" alt="Манікюр">
+        </div>
+        <div class="ab-badge"><b>★ 5,0</b><span>2830 підписників</span></div>
+      </div>
+      <div>
+        <div class="sh r d1">
+          <span class="eyebrow">Про нас</span>
+          <h2 class="hd">Де краса стає <br><em class="grad">мистецтвом</em></h2>
+          <p class="ss">Valentino Beauty Style — затишний салон в Ужгороді. Ми поєднуємо бездоганну майстерність, комфорт та стиль. Кожен візит — це турбота про вас і задоволення для душі й тіла.</p>
+        </div>
+        <div class="feats r d2">
+          <div class="feat"><div class="feat-ic">👑</div><div><div class="feat-t">Досвідчені майстри</div><div class="feat-d">Фахівці з душею та увагою до деталей</div></div></div>
+          <div class="feat"><div class="feat-ic">🛡️</div><div><div class="feat-t">Стерильність</div><div class="feat-d">Повна дезінфекція після кожного клієнта</div></div></div>
+          <div class="feat"><div class="feat-ic">💖</div><div><div class="feat-t">Індивідуальний підхід</div><div class="feat-d">Чуємо ваші побажання — завжди</div></div></div>
+          <div class="feat"><div class="feat-ic">🏡</div><div><div class="feat-t">Затишна атмосфера</div><div class="feat-d">Розслабтесь і насолодіться візитом</div></div></div>
+        </div>
+        <button class="btn bf r d3" style="margin-top:22px" onclick="g('contacts')">Записатись →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="alt" id="services">
+  <div class="si">
+    <div class="sh c r"><span class="eyebrow">Послуги</span><h2 class="hd">Повний догляд — <span class="grad">в одному місці</span></h2><p class="ss" style="margin:12px auto 0">Манікюр, педикюр, брови, макіяж та перукарські послуги в Ужгороді</p></div>
+    <div class="bento r d1">
+      <div class="bc">
+        <div class="bc-n">01</div>
+        <div class="bc-i">💅</div>
+        <div class="bc-t">Манікюр і нігті</div>
+        <div class="bc-d">Комбінований манікюр, гель-лак, камуфляжна база, нарощування та корекція. Дизайн на будь-який смак.</div>
+        <div class="bc-tags"><span class="bc-tag">гель-лак</span><span class="bc-tag">нарощування</span><span class="bc-tag">дизайн</span></div>
+        <button class="btn bf bsm" onclick="g('contacts')">Записатись</button>
+      </div>
+      <div class="bc">
+        <div class="bc-n">02</div>
+        <div class="bc-i">🦶</div>
+        <div class="bc-t">Педикюр</div>
+        <div class="bc-d">Доглянуті стопи й пальці, стійке покриття. Акуратно, гігієнічно та з турботою про комфорт.</div>
+        <div class="bc-tags"><span class="bc-tag">стопи</span><span class="bc-tag">покриття</span><span class="bc-tag">догляд</span></div>
+        <button class="btn bf bsm" onclick="g('contacts')">Записатись</button>
+      </div>
+      <div class="bc">
+        <div class="bc-n">03</div>
+        <div class="bc-i">🌿</div>
+        <div class="bc-t">Брови і макіяж</div>
+        <div class="bc-d">Корекція та фарбування брів, макіяж на кожен день і для особливих подій. Підкреслимо вашу природну красу.</div>
+        <div class="bc-tags"><span class="bc-tag">корекція</span><span class="bc-tag">фарбування</span><span class="bc-tag">макіяж</span></div>
+        <button class="btn bf bsm" onclick="g('contacts')">Записатись</button>
+      </div>
+      <div class="bc">
+        <div class="bc-n">04</div>
+        <div class="bc-i">💇‍♀️</div>
+        <div class="bc-t">Перукарські послуги</div>
+        <div class="bc-d">Жіночі та чоловічі стрижки, укладка, фарбування. Образ, що пасує саме вам — від повсякдення до свята.</div>
+        <div class="bc-tags"><span class="bc-tag">стрижки</span><span class="bc-tag">укладка</span><span class="bc-tag">фарбування</span></div>
+        <button class="btn bf bsm" onclick="g('contacts')">Записатись</button>
+      </div>
+      <div class="bc" style="background:var(--o3);border-color:rgba(139,34,82,.2)">
+        <div class="bc-n">?</div>
+        <div class="bc-i">💬</div>
+        <div class="bc-t">Не знаєте, що обрати?</div>
+        <div class="bc-d">Напишіть нам — підкажемо послугу та запишемо на зручний час.</div>
+        <button class="btn bf bsm" onclick="g('contacts')">Поставити питання</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="price">
+  <div class="si">
+    <div class="sh c r"><span class="eyebrow">Прозорі ціни</span><h2 class="hd"><span class="grad">Прайс-лист</span></h2><p class="ss" style="margin:12px auto 0">Жодних прихованих доплат — дивіться вартість одразу і записуйтесь</p></div>
+    <div class="price-l r d1">
+      <div class="p-nav">
+        <button class="ptab on" onclick="showTab(0)">💅 Манікюр</button>
+        <button class="ptab" onclick="showTab(1)">🦶 Педикюр</button>
+        <button class="ptab" onclick="showTab(2)">🌿 Брови та макіяж</button>
+        <button class="ptab" onclick="showTab(3)">💇‍♀️ Стрижки та інше</button>
+      </div>
+      <div class="p-panel">
+        <!-- Manicure -->
+        <div class="p-pane on" id="tab-0">
+          <div class="p-head"><div class="p-head-t">💅 Манікюр</div></div>
+          <div class="p-row"><span class="p-name">Манікюр комбінований</span><span class="p-price">300 ₴</span></div>
+          <div class="p-row"><span class="p-name">Манікюр + гель-лак</span><span class="p-price">600 ₴</span></div>
+          <div class="p-row"><span class="p-name">Манікюр + камуфляжна база</span><span class="p-price">550 ₴</span></div>
+          <div class="p-row"><span class="p-name">Нарощування нігтів</span><span class="p-price">700–1100 ₴</span></div>
+          <div class="p-row"><span class="p-name">Корекція нарощених</span><span class="p-price">650–900 ₴</span></div>
+          <div class="p-row"><span class="p-name">Чоловічий манікюр</span><span class="p-price">300 ₴</span></div>
+        </div>
+        <!-- Pedicure -->
+        <div class="p-pane" id="tab-1">
+          <div class="p-head"><div class="p-head-t">🦶 Педикюр</div></div>
+          <div class="p-row"><span class="p-name">Педикюр (стопи)</span><span class="p-price">250 ₴</span></div>
+          <div class="p-row"><span class="p-name">Педикюр (пальці)</span><span class="p-price">250 ₴</span></div>
+          <div class="p-row"><span class="p-name">Покриття нігтів</span><span class="p-price">200 ₴</span></div>
+          <div class="p-row"><span class="p-name">Чоловічий педикюр</span><span class="p-price">700 ₴</span></div>
+        </div>
+        <!-- Brows -->
+        <div class="p-pane" id="tab-2">
+          <div class="p-head"><div class="p-head-t">🌿 Брови та макіяж</div></div>
+          <div class="p-row"><span class="p-name">Корекція брів</span><span class="p-price">за запитом</span></div>
+          <div class="p-row"><span class="p-name">Фарбування брів</span><span class="p-price">за запитом</span></div>
+          <div class="p-row"><span class="p-name">Макіяж денний</span><span class="p-price">за запитом</span></div>
+          <div class="p-row"><span class="p-name">Макіяж вечірній</span><span class="p-price">за запитом</span></div>
+          <div class="p-row"><span class="p-name">Макіяж весільний</span><span class="p-price">за запитом</span></div>
+        </div>
+        <!-- Hair -->
+        <div class="p-pane" id="tab-3">
+          <div class="p-head"><div class="p-head-t">💇‍♀️ Стрижки та інше</div></div>
+          <div class="p-row"><span class="p-name">Жіночі стрижки</span><span class="p-price">за запитом</span></div>
+          <div class="p-row"><span class="p-name">Чоловічі стрижки</span><span class="p-price">за запитом</span></div>
+          <div class="p-row"><span class="p-name">Укладка</span><span class="p-price">за запитом</span></div>
+          <div class="p-row"><span class="p-name">Фарбування</span><span class="p-price">за запитом</span></div>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:13px;color:var(--sub)" class="r">Точну вартість перукарських послуг — <a href="https://instagram.com/valentino_beauty_style" target="_blank" style="color:var(--o);font-weight:600">уточнюйте в салоні або Instagram</a></p>
+  </div>
+</section>
+
+<!-- MASTERS -->
+<section class="alt" id="masters">
+  <div class="si">
+    <div class="sh c r"><span class="eyebrow">Наша команда</span><h2 class="hd">Майстри, яким <span class="grad">довіряють</span></h2><p class="ss" style="margin:12px auto 0">Команда Valentino Beauty Style — це майстри з душею. Ми любимо свою справу, уважні до деталей і завжди орієнтовані на ваш результат.</p></div>
+    <div class="masters-g">
+      <div class="mc r d1">
+        <div class="mc-top">
+          <div class="mc-num">01</div>
+          <div class="mc-photo">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=200&h=200&fit=crop&q=80" alt="Майстер манікюру">
+          </div>
+          <div class="mc-name">Майстер манікюру</div>
+          <div class="mc-role">Манікюр · Дизайн</div>
+        </div>
+        <div class="mc-div"></div>
+        <div class="mc-body">
+          <div class="mc-stars">★★★★★</div>
+          <div class="mc-spec">Спеціаліст з манікюру та нігтьового дизайну. Гель-лак, нарощування, витончений французький манікюр.</div>
+        </div>
+      </div>
+      <div class="mc r d2">
+        <div class="mc-top">
+          <div class="mc-num">02</div>
+          <div class="mc-photo">
+            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=200&h=200&fit=crop&q=80" alt="Майстер педикюру">
+          </div>
+          <div class="mc-name">Майстер педикюру</div>
+          <div class="mc-role">Педикюр · Догляд</div>
+        </div>
+        <div class="mc-div"></div>
+        <div class="mc-body">
+          <div class="mc-stars">★★★★★</div>
+          <div class="mc-spec">Спеціаліст з педикюру та догляду за стопами. Акуратний результат і стійке покриття.</div>
+        </div>
+      </div>
+      <div class="mc r d3">
+        <div class="mc-top">
+          <div class="mc-num">03</div>
+          <div class="mc-photo">
+            <img src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?w=200&h=200&fit=crop&q=80" alt="Майстер краси">
+          </div>
+          <div class="mc-name">Майстер краси</div>
+          <div class="mc-role">Брови · Макіяж · Перукар</div>
+        </div>
+        <div class="mc-div"></div>
+        <div class="mc-body">
+          <div class="mc-stars">★★★★★</div>
+          <div class="mc-spec">Корекція та фарбування брів, макіяж, стрижки. Допоможе підібрати ідеальний образ для вас.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="si">
+    <div class="sh c r"><span class="eyebrow">Галерея робіт</span><h2 class="hd">Реальні роботи <span class="grad">наших майстрів</span></h2><p class="ss" style="margin:12px auto 0">Манікюр, педикюр та нігтьовий дизайн від Valentino Beauty Style</p></div>
+    <div class="gal-g r d1">
+      <div class="gi" onclick="openLb(this)">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" alt="Манікюр з розписом">
+        <div class="gi-lbl">Манікюр з розписом</div>
+      </div>
+      <div class="gi" onclick="openLb(this)">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" alt="Гель-лак нюд">
+        <div class="gi-lbl">Гель-лак нюд</div>
+      </div>
+      <div class="gi" onclick="openLb(this)">
+        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&q=80" alt="Педикюр французький">
+        <div class="gi-lbl">Педикюр французький</div>
+      </div>
+      <div class="gi" onclick="openLb(this)">
+        <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=800&q=80" alt="Нарощування нігтів">
+        <div class="gi-lbl">Нарощування нігтів</div>
+      </div>
+      <div class="gi" onclick="openLb(this)">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80" alt="Дизайн нігтів">
+        <div class="gi-lbl">Дизайн нігтів</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px" class="r">
+      <a class="btn bo" href="https://instagram.com/valentino_beauty_style" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Більше робіт в Instagram @valentino_beauty_style
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lb">
+  <button id="lb-x" onclick="document.getElementById('lb').classList.remove('on')">×</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<!-- REVIEWS -->
+<section class="alt" id="reviews">
+  <div class="si">
+    <div class="sh c r"><span class="eyebrow">Відгуки</span><h2 class="hd">Що кажуть <span class="grad">наші клієнтки</span></h2></div>
+    <div class="rev-g">
+      <div class="rc r d1">
+        <div class="rc-q">"</div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-text">Неймовірно задоволена! Зробила манікюр та педикюр — результат бездоганний. Атмосфера в салоні просто чарівна 💜</div>
+        <div class="rc-au"><div class="rc-av">О</div><div><div class="rc-name">Оксана К.</div><div class="rc-date">квітень 2025</div></div></div>
+      </div>
+      <div class="rc r d2">
+        <div class="rc-q">"</div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-text">Вперше робила корекцію брів — результат вище всіх очікувань. Майстер — справжній профі!</div>
+        <div class="rc-au"><div class="rc-av">М</div><div><div class="rc-name">Марина Т.</div><div class="rc-date">березень 2025</div></div></div>
+      </div>
+      <div class="rc r d3">
+        <div class="rc-q">"</div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-text">Valentino Beauty Style — моє улюблене місце. Чистота, комфорт та неперевершена якість!</div>
+        <div class="rc-au"><div class="rc-av">В</div><div><div class="rc-name">Вікторія Р.</div><div class="rc-date">травень 2025</div></div></div>
+      </div>
+      <div class="rc r d1">
+        <div class="rc-q">"</div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-text">Зробила нарощування вперше — в захваті! Нігті виглядають натурально та дуже красиво.</div>
+        <div class="rc-au"><div class="rc-av">Д</div><div><div class="rc-name">Дарина М.</div><div class="rc-date">лютий 2025</div></div></div>
+      </div>
+      <div class="rc r d2">
+        <div class="rc-q">"</div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-text">Майстер зробила стрижку мрії. Приємна атмосфера, уважний персонал — однозначно топ!</div>
+        <div class="rc-au"><div class="rc-av">А</div><div><div class="rc-name">Аліна Г.</div><div class="rc-date">січень 2025</div></div></div>
+      </div>
+      <div class="rc r d3" style="background:var(--o3);border-color:rgba(139,34,82,.2);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px">
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700">Ваш відгук може бути наступним.</div>
+        <a class="btn bf" href="https://instagram.com/valentino_beauty_style" target="_blank" rel="noopener">Залишити відгук</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section style="padding:48px 5vw">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="cta-band-inner r">
+      <div>
+        <h2>Готові до перетворення?</h2>
+        <p>Напишіть нам в Instagram або Telegram — підберемо зручний час і відповімо на всі питання.</p>
+      </div>
+      <div class="cta-btns">
+        <a class="btn-white" href="https://instagram.com/valentino_beauty_style" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a class="btn-outline-white" href="https://t.me/valentino_beauty_style" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts">
+  <div class="si">
+    <div class="sh r"><span class="eyebrow">Контакти і запис</span><h2 class="hd">Завітайте <span class="grad">до нас</span></h2></div>
+    <div class="ct-g">
+      <div class="cbox r d1">
+        <h3>Контактна інформація</h3>
+        <p class="cb-sub">Записуйтесь через Instagram або Telegram — відповімо швидко</p>
+        <div class="ci">
+          <div class="ci-ic">📍</div>
+          <div><div class="ci-lb">Місто</div><div class="ci-val">Ужгород</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic">📸</div>
+          <div><div class="ci-lb">Instagram</div><div class="ci-val"><a href="https://instagram.com/valentino_beauty_style" target="_blank" style="color:var(--o);font-weight:600">@valentino_beauty_style</a></div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic">✈️</div>
+          <div><div class="ci-lb">Telegram</div><div class="ci-val"><a href="https://t.me/valentino_beauty_style" target="_blank" style="color:var(--o);font-weight:600">@valentino_beauty_style</a></div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic">🕐</div>
+          <div><div class="ci-lb">Графік роботи</div><div class="ci-val">Понеділок–Неділя · 10:00–20:00</div></div>
+        </div>
+        <div class="socs">
+          <a class="soc" href="https://instagram.com/valentino_beauty_style" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a class="soc" href="https://t.me/valentino_beauty_style" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 18.6 20.06c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1 .5l.36-5.13L17.97 6.4c.4-.36-.09-.56-.63-.2L6.42 13.13l-4.98-1.56c-1.08-.34-1.1-1.08.23-1.6l19.46-7.5c.9-.34 1.69.2 1.4 1.43z"/></svg>
+            Telegram
+          </a>
+        </div>
+      </div>
+      <div class="r d2">
+        <div class="map-box">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--o)" stroke-width="1.5"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>Ужгород</p>
+          <a class="map-link" href="https://maps.app.goo.gl/ESBndqTnduVBAXXB8" target="_blank" rel="noopener">Відкрити на карті</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-i">
+    <div class="ft-g">
+      <div class="ft-about">
+        <div class="ft-logo-n">Valentino</div>
+        <div class="ft-logo-s">Beauty Style · Ужгород</div>
+        <p>Комплексний догляд і краса в одному місці. Затишний салон в Ужгороді — атмосфера турботи та комфорту.</p>
+        <div class="ft-socs">
+          <a class="ft-soc" href="https://instagram.com/valentino_beauty_style" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="ft-soc" href="https://t.me/valentino_beauty_style" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 18.6 20.06c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1 .5l.36-5.13L17.97 6.4c.4-.36-.09-.56-.63-.2L6.42 13.13l-4.98-1.56c-1.08-.34-1.1-1.08.23-1.6l19.46-7.5c.9-.34 1.69.2 1.4 1.43z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-h">Навігація</div>
+        <button class="ft-a" onclick="g('services')">Послуги</button>
+        <button class="ft-a" onclick="g('price')">Прайс</button>
+        <button class="ft-a" onclick="g('masters')">Майстри</button>
+        <button class="ft-a" onclick="g('gallery')">Галерея</button>
+        <button class="ft-a" onclick="g('reviews')">Відгуки</button>
+      </div>
+      <div>
+        <div class="ft-h">Контакти</div>
+        <a class="ft-a" href="https://instagram.com/valentino_beauty_style" target="_blank">@valentino_beauty_style</a>
+        <a class="ft-a" href="https://maps.app.goo.gl/ESBndqTnduVBAXXB8" target="_blank" rel="noopener">Ужгород</a>
+        <span class="ft-a" style="cursor:default">Пн–Нд · 10:00–20:00</span>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <div class="ft-copy">© 2025 Valentino Beauty Style</div>
+      <div class="ft-copy">Комплексний догляд і краса в одному місці</div>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta">
+  <a class="btn bf" style="flex:1" href="https://instagram.com/valentino_beauty_style" target="_blank" rel="noopener">Записатись</a>
+  <a class="btn bo" style="flex:1" href="https://instagram.com/valentino_beauty_style" target="_blank" rel="noopener">Instagram</a>
+</div>
+
+<script>
+// Smooth scroll helper
+function g(id){
+  document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('mob').classList.remove('open');
+}
+
+// Nav stuck on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('stuck', window.scrollY > 20);
+});
+
+// Mobile menu
+document.getElementById('burgerBtn').addEventListener('click', () => {
+  document.getElementById('mob').classList.add('open');
+});
+document.getElementById('mobClose').addEventListener('click', () => {
+  document.getElementById('mob').classList.remove('open');
+});
+
+// Dark mode toggle
+const themeBtn = document.getElementById('themeBtn');
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('night');
+  themeBtn.textContent = document.body.classList.contains('night') ? '☀️' : '🌙';
+});
+
+// Price tabs
+function showTab(idx) {
+  document.querySelectorAll('.ptab').forEach((t, i) => t.classList.toggle('on', i === idx));
+  document.querySelectorAll('.p-pane').forEach((p, i) => p.classList.toggle('on', i === idx));
+}
+
+// Gallery lightbox
+function openLb(el) {
+  const img = el.querySelector('img');
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb-img').alt = img.alt;
+  document.getElementById('lb').classList.add('on');
+}
+document.getElementById('lb').addEventListener('click', (e) => {
+  if(e.target.id === 'lb') document.getElementById('lb').classList.remove('on');
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); });
+}, {threshold:.12});
+document.querySelectorAll('.r').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
